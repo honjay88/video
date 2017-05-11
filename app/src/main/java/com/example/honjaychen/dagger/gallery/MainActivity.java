@@ -9,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +22,7 @@ import com.heinrichreimersoftware.materialdrawer.structure.DrawerItem;
 import com.heinrichreimersoftware.materialdrawer.structure.DrawerProfile;
 import com.itheima.loopviewpager.LoopViewPager;
 import com.mindorks.placeholderview.PlaceHolderView;
+import com.test.pkg.ModelManager;
 
 import java.util.Comparator;
 import java.util.List;
@@ -43,10 +45,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private PlaceHolderView mGalleryView;
     private PlaceHolderView mViewholder;
-   // private Button playButton;
+    // private Button playButton;
     private Context mContext;
     private LoopViewPager loopViewPager;
-    private boolean          direction;
+    private boolean direction;
     private DrawerView drawer;
     private ActionBarDrawerToggle drawerToggle;
 
@@ -55,16 +57,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        mContext = getBaseContext();
 
-       // playButton = (Button) findViewById(R.id.playButton);
-      //  playButton.setOnClickListener(this);
+        try {
+            mContext = getBaseContext();
 
-        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-        drawer = (DrawerView) findViewById(R.id.drawer);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+            // playButton = (Button) findViewById(R.id.playButton);
+            //  playButton.setOnClickListener(this);
 
-        setSupportActionBar(toolbar);
+            DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+            drawer = (DrawerView) findViewById(R.id.drawer);
+            Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+            setSupportActionBar(toolbar);
 
        /* setDrawerTheme(
                 new DrawerTheme(this)
@@ -74,55 +78,61 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         );*/
 
 
-        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close ) {
-            public void onDrawerClosed(View view) {
-                invalidateOptionsMenu();
-            }
+            drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close) {
+                public void onDrawerClosed(View view) {
+                    invalidateOptionsMenu();
+                }
 
-            public void onDrawerOpened(View drawerView) {
-                invalidateOptionsMenu();
-            }
-        };
+                public void onDrawerOpened(View drawerView) {
+                    invalidateOptionsMenu();
+                }
+            };
 
-        drawerLayout.setStatusBarBackgroundColor(ContextCompat.getColor(this, R.color.bootstrap_brand_danger));
-        drawerLayout.addDrawerListener(drawerToggle);
-        drawerLayout.closeDrawer(drawer);
-        drawer.addProfile(new DrawerProfile()
-                .setId(1)
-                .setRoundedAvatar((BitmapDrawable) ContextCompat.getDrawable(this, R.drawable.cat_2))
-                .setBackground(ContextCompat.getDrawable(this, R.drawable.b1))
-                .setName("設定")
-        );
+            drawerLayout.setStatusBarBackgroundColor(ContextCompat.getColor(this, R.color.bootstrap_brand_danger));
+            drawerLayout.addDrawerListener(drawerToggle);
+            drawerLayout.closeDrawer(drawer);
+            drawer.addProfile(new DrawerProfile()
+                    .setId(1)
+                    .setRoundedAvatar((BitmapDrawable) ContextCompat.getDrawable(this, R.drawable.cat_2))
+                    .setBackground(ContextCompat.getDrawable(this, R.drawable.b1))
+                    .setName("設定")
+            );
 
-        drawer.addItem(new DrawerItem()
-                .setImage(ContextCompat.getDrawable(this, R.drawable.checkbox))
-                .setTextPrimary("近期瀏覽"));
-        drawer.addDivider();
-        drawer.addItem(new DrawerItem()
-                .setImage(ContextCompat.getDrawable(this, R.drawable.favorite))
-                .setTextPrimary("我的最愛")
-        );
-        drawer.addDivider();
-        drawer.addItem(new DrawerItem()
-                .setImage(ContextCompat.getDrawable(this, R.drawable.research))
-                .setTextPrimary("搜索")
-        );
-        drawer.addDivider();
+            drawer.addItem(new DrawerItem()
+                    .setImage(ContextCompat.getDrawable(this, R.drawable.checkbox))
+                    .setTextPrimary("近期瀏覽"));
+            drawer.addDivider();
+            drawer.addItem(new DrawerItem()
+                    .setImage(ContextCompat.getDrawable(this, R.drawable.favorite))
+                    .setTextPrimary("我的最愛")
+            );
+            drawer.addDivider();
+            drawer.addItem(new DrawerItem()
+                    .setImage(ContextCompat.getDrawable(this, R.drawable.research))
+                    .setTextPrimary("搜索")
+            );
+            drawer.addDivider();
 
-        drawer.addItem(new DrawerItem()
-                .setImage(ContextCompat.getDrawable(this, R.drawable.smartphone))
-                .setTextPrimary("說明")
-        );
-        drawer.addDivider();
-        drawer.addFixedItem(new DrawerItem()
-                .setRoundedImage((BitmapDrawable) ContextCompat.getDrawable(this, R.drawable.logout_sign), DrawerItem.SMALL_AVATAR)
-                .setTextPrimary("離開")
-        );
+            drawer.addItem(new DrawerItem()
+                    .setImage(ContextCompat.getDrawable(this, R.drawable.smartphone))
+                    .setTextPrimary("說明")
+            );
+            drawer.addDivider();
+            drawer.addFixedItem(new DrawerItem()
+                    .setRoundedImage((BitmapDrawable) ContextCompat.getDrawable(this, R.drawable.logout_sign), DrawerItem.SMALL_AVATAR)
+                    .setTextPrimary("離開")
+            );
 
-        mGalleryView = (PlaceHolderView)findViewById(R.id.galleryView);
-        mGalleryView.addView(new LoopPage(this,mGalleryView));
-        mViewholder = (PlaceHolderView)findViewById(R.id.viewholder);
-        setupGallery();
+            mGalleryView = (PlaceHolderView) findViewById(R.id.galleryView);
+            mGalleryView.addView(new LoopPage(this, mGalleryView));
+            mViewholder = (PlaceHolderView) findViewById(R.id.viewholder);
+            setupGallery();
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            Log.d("My-Log-Msg", e.toString());
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -152,6 +162,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onPostCreate(savedInstanceState);
         drawerToggle.syncState();
     }
+
     @Override
     public void onClick(View view) {
        /* switch (view.getId()) {
@@ -167,20 +178,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }*/
     }
 
-    private void setupGallery(){
+    private void setupGallery() {
 
-        List<Image> imageList = Utils.loadImages(this.getApplicationContext());
+        List<Image> imageList = ModelManager.provideImageModel(this.getApplicationContext());//Utils.loadImages(this.getApplicationContext());
+
         List<String> ls = Observable.fromIterable(imageList)
-                  .map(p->p.getCategory())
-                  .distinct().toList().blockingGet();
+                .map(p -> p.getCategory())
+                .distinct().toList().blockingGet();
         for (String s : ls) {
-            List<Image> Images =  Observable.fromIterable(imageList)
+            List<Image> Images = Observable.fromIterable(imageList)
                     .filter(p -> p.getCategory().equals(s))
                     .sorted(new Comparator<Image>() {
                         @Override
                         public int compare(Image o1, Image o2) {
                             return o1.getUpdate().compareTo(o2.getUpdate());
-                        }})
+                        }
+                    })
                     .take(10)
                     .toList().blockingGet();
 

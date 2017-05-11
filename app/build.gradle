@@ -31,8 +31,8 @@ android {
 
         }
     }
-    productFlavors {
 
+    productFlavors {
         dev {
             applicationIdSuffix ".dev"
             manifestPlaceholders = [ appLabel: "Flavor Flav (Dev)" ]
@@ -40,10 +40,7 @@ android {
         prod {
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+
     buildTypes {
         release {
             debuggable true
@@ -76,10 +73,12 @@ android {
                             'src/main/res/layouts',
                             'src/main/res'
                     ]
+            //jniLibs.srcDirs = ['libs']//重新配置路径
         }
     }
     dexOptions {
         jumboMode = true
+        preDexLibraries true
         javaMaxHeapSize "4g"
     }
 
@@ -95,6 +94,27 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    tasks.whenTaskAdded { task ->
+        if (task.name.contains("lint")
+                //||task.name.equals("clean")
+                //如果项目中有用到aidl则不可以舍弃这个任务
+                ||task.name.contains("Aidl")
+                //用不到测试的时候就可以先关闭
+                //||task.name.contains("ijkPlayer-lib")
+                //||task.name.contains("UnitTest")
+               // ||task.name.contains("AndroidTest")
+                //用不到NDK和JNI的也关闭掉
+                || task.name.contains("Ndk")
+                //|| task.name.contains("Jni")
+        ) {
+            task.enabled = false
+        }
+    }
 }
 
 greendao {
