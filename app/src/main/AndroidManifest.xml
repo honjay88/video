@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.honjaychen.dagger">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails
+     <uses-sdk tools:overrideLibrary="tv.danmaku.ijk.media.player_arm64,tv.danmaku.ijk.media.player_x86_64,com.example.ijkplayer_x86_64" />
+    -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- android:theme="@style/AppTheme"
+     <uses-sdk tools:overrideLibrary="tv.danmaku.ijk.media.player_arm64,tv.danmaku.ijk.media.player_x86_64,com.example.ijkplayer_x86_64" />
+    -->
+    <application
+        android:name=".initial.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="${appLabel}"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".media.PlayerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/Todo">
+        </activity>
+        <activity
+            android:name=".gallery.gallery.PreferenceActivityCompat"
+            android:label="@string/Todo">
+        </activity>
+        <activity
+            android:name=".ui.login.view.LoginOptimizedActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".gallery.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.home.MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="com.example.honjaychen.dagger.home.MainActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.home.TodoActivity"
+            android:label="@string/Todo"
+            android:theme="@android:style/Theme.Dialog">
+        </activity>
+        <activity
+            android:name=".list.MainActivity2"
+            android:label="@string/Todo">
+        </activity>
+
+        <!--  android:screenOrientation="portrait" -->
+        <activity
+            android:name=".frags.MultiFragmentSampleActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:label="@string/Todo">
+        </activity>
+        <!-- IntentService -->
+        <service android:name=".service.uploadIntentService" />
+    </application>
+
+</manifest>

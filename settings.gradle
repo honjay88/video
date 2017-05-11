@@ -1,0 +1,7 @@
+include ':app',
+        ':android-utils',
+        ':library',':menu-lib',
+        ':dialog-lib:core',
+        ':dialog-lib:commons',
+        ':IjkPlayer-lib',
+        ':ProgressBar-lib'

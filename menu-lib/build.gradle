@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+
+
+
+android {
+    compileSdkVersion rootProject.ext.global_compileSdkVersion
+    buildToolsVersion rootProject.ext.global_buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.global_minSdkVersion
+        targetSdkVersion rootProject.ext.global_targetSdkVersion
+        versionCode rootProject.ext.global_libVersionCode
+        versionName rootProject.ext.global_libVersionName
+    }
+    lintOptions {
+        abortOnError false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile "com.android.support:support-v4:$rootProject.ext.supportLibVersion"
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
+    compile "com.android.support:palette-v7:$rootProject.ext.supportLibVersion"
+}

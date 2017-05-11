@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main$Generated" generated="true"><source path="H:\Media\android\Dagger\library\src\main\res"/><source path="H:\Media\android\Dagger\library\build\generated\res\rs\release"/><source path="H:\Media\android\Dagger\library\build\generated\res\resValues\release"/></dataSet><dataSet config="release$Generated" generated="true"><source path="H:\Media\android\Dagger\library\src\release\res"/></dataSet><dataSet config="main" generated-set="main$Generated"><source path="H:\Media\android\Dagger\library\src\main\res"><file name="hm_loopviewpager" path="H:\Media\android\Dagger\library\src\main\res\layout\hm_loopviewpager.xml" qualifiers="" type="layout"/><file path="H:\Media\android\Dagger\library\src\main\res\values\hm_attrs.xml" qualifiers=""><declare-styleable name="LoopDotsView">
+        
+        <attr format="integer|dimension|reference" name="dotSize"/>
+        
+        <attr format="integer|dimension|reference" name="dotWidth"/>
+        
+        <attr format="integer|dimension|reference" name="dotHeight"/>
+        
+        <attr format="integer|dimension|reference" name="dotRange"/>
+        
+        <attr name="dotShape">
+            
+            <enum name="rectangle" value="1"/>
+            
+            <enum name="oval" value="2"/>
+            
+            <enum name="triangle" value="3"/>
+            
+            <enum name="diamond" value="4"/>
+        </attr>
+        
+        <attr format="color|reference" name="dotColor"/>
+        
+        <attr format="color|reference" name="dotSelectColor"/>
+        
+        <attr format="reference" name="dotResource"/>
+        
+        <attr format="reference" name="dotSelectResource"/>
+    </declare-styleable><declare-styleable name="LoopViewPager">
+        
+        <attr format="integer" name="loopTime"/>
+        
+        <attr format="integer" name="animTime"/>
+        
+        <attr format="enum" name="animStyle">
+            
+            <enum name="accordion" value="1"/>
+            <enum name="accordionUp" value="2"/>
+            
+            <enum name="cube" value="3"/>
+            <enum name="cubeUp" value="4"/>
+        </attr>
+        
+        <attr format="boolean" name="scrollEnable"/>
+        
+        <attr format="boolean" name="touchEnable"/>
+    </declare-styleable></file></source><source path="H:\Media\android\Dagger\library\build\generated\res\rs\release"/><source path="H:\Media\android\Dagger\library\build\generated\res\resValues\release"/></dataSet><dataSet config="release" generated-set="release$Generated"><source path="H:\Media\android\Dagger\library\src\release\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="LoopDotsView"><attr format="integer|dimension|reference" name="dotSize"/><attr format="integer|dimension|reference" name="dotWidth"/><attr format="integer|dimension|reference" name="dotHeight"/><attr format="integer|dimension|reference" name="dotRange"/><attr name="dotShape">
+            
+            <enum name="rectangle" value="1"/>
+            
+            <enum name="oval" value="2"/>
+            
+            <enum name="triangle" value="3"/>
+            
+            <enum name="diamond" value="4"/>
+        </attr><attr format="color|reference" name="dotColor"/><attr format="color|reference" name="dotSelectColor"/><attr format="reference" name="dotResource"/><attr format="reference" name="dotSelectResource"/></declare-styleable><declare-styleable name="LoopViewPager"><attr format="integer" name="loopTime"/><attr format="integer" name="animTime"/><attr format="enum" name="animStyle">
+            
+            <enum name="accordion" value="1"/>
+            <enum name="accordionUp" value="2"/>
+            
+            <enum name="cube" value="3"/>
+            <enum name="cubeUp" value="4"/>
+        </attr><attr format="boolean" name="scrollEnable"/><attr format="boolean" name="touchEnable"/></declare-styleable></configuration></mergedItems></merger>

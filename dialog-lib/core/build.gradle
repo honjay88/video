@@ -1,0 +1,43 @@
+apply plugin: 'com.android.library'
+apply from: '../dependencies.gradle'
+
+//ext {
+//    PUBLISH_GROUP_ID = 'com.afollestad.material-dialogs'
+ //   PUBLISH_ARTIFACT_ID = 'core'
+  //  PUBLISH_VERSION = versions.publishVersion
+//}
+
+android {
+    compileSdkVersion rootProject.ext.global_compileSdkVersion
+    buildToolsVersion rootProject.ext.global_buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.global_minSdkVersion
+        targetSdkVersion rootProject.ext.global_targetSdkVersion
+        versionCode rootProject.ext.global_libVersionCode
+        versionName rootProject.ext.global_libVersionName
+        consumerProguardFiles 'progress-proguard.txt'
+    }
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+    sourceSets {
+        main.res.srcDirs = [
+            'src/main/res',
+            'src/main/res-public'
+        ]
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+    compile "com.android.support:support-v13:$rootProject.ext.supportLibVersion"
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibVersion"
+    compile "com.android.support:support-annotations:$rootProject.ext.supportLibAnnotation"
+    compile project(':ProgressBar-lib')
+    //compile 'me.zhanghai.android.materialprogressbar:library:' + versions.mdProgressBar
+}
+
+//apply from: 'https://raw.githubusercontent.com/afollestad/aidanfollestad.com/master/android-lib-release.gradle'

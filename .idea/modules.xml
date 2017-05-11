@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Dagger.iml" filepath="$PROJECT_DIR$/Dagger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IjkPlayer-lib/IjkPlayer-lib.iml" filepath="$PROJECT_DIR$/IjkPlayer-lib/IjkPlayer-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProgressBar-lib/ProgressBar-lib.iml" filepath="$PROJECT_DIR$/ProgressBar-lib/ProgressBar-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-utils/android-utils.iml" filepath="$PROJECT_DIR$/android-utils/android-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dialog-lib/commons/commons.iml" filepath="$PROJECT_DIR$/dialog-lib/commons/commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dialog-lib/core/core.iml" filepath="$PROJECT_DIR$/dialog-lib/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dialog-lib/dialog-lib.iml" filepath="$PROJECT_DIR$/dialog-lib/dialog-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/menu-lib/menu-lib.iml" filepath="$PROJECT_DIR$/menu-lib/menu-lib.iml" />
+    </modules>
+  </component>
+</project>

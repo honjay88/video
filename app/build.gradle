@@ -1,0 +1,201 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'me.tatarka.retrolambda'
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+    compileSdkVersion rootProject.ext.global_compileSdkVersion
+    buildToolsVersion rootProject.ext.global_buildToolsVersion
+    defaultConfig {
+        applicationId "com.example.honjaychen.dagger"
+        manifestPlaceholders = [ appLabel: "Flavor Flav" ]
+
+        minSdkVersion rootProject.ext.global_minSdkVersion
+        targetSdkVersion rootProject.ext.global_targetSdkVersion
+        versionCode rootProject.ext.global_libVersionCode
+        versionName rootProject.ext.global_libVersionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    signingConfigs {
+        release {
+            keyAlias 'aaaa'
+            keyPassword 'bbbb'
+            storeFile file('app.jks')
+            storePassword 'cccc'
+        }
+        debug {
+
+        }
+    }
+    productFlavors {
+
+        dev {
+            applicationIdSuffix ".dev"
+            manifestPlaceholders = [ appLabel: "Flavor Flav (Dev)" ]
+        }
+        prod {
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            debuggable true
+            minifyEnabled true //啟用Proguard
+            shrinkResources true //是否清理無用資源,依賴於minifyEnabled
+            zipAlignEnabled true //是否啟用zipAlign壓縮
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false  //不啟用Proguard
+            shrinkResources false //是否清理無用資源,依賴於minifyEnabled
+            zipAlignEnabled false //是否啟用zipAlign壓縮
+            signingConfig signingConfigs.debug
+        }
+    }
+    packagingOptions{
+        exclude 'META-INF/rxjava.properties'
+       // exclude 'META-INF/LICENSE'
+       // exclude 'META-INF/NOTICE'
+    }
+
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/layouts/fgs',
+                            'src/main/res/layouts/other',
+                            'src/main/res/layouts',
+                            'src/main/res'
+                    ]
+        }
+    }
+    dexOptions {
+        jumboMode = true
+        javaMaxHeapSize "4g"
+    }
+
+    applicationVariants.all { variant ->
+        if (variant.buildType.name.equals('release')) {
+            variant.outputs.each { output ->
+                def outputFile = output.outputFile
+                if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                    def fileName = "vedio_v${defaultConfig.versionName}_${releaseTime()}_${variant.flavorName}.apk"
+                    output.outputFile = new File(outputFile.parent, fileName)
+                }
+            }
+        }
+    }
+
+}
+
+greendao {
+    schemaVersion 1
+    daoPackage 'honjay.common.module.model.gen'
+    targetGenDir 'src/main/java'
+}
+
+
+dependencies {
+
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
+    compile "com.android.support:design:$rootProject.ext.supportLibVersion"
+    compile "com.android.support:cardview-v7:$rootProject.ext.supportLibVersion"
+    compile "com.android.support:support-annotations:$rootProject.ext.supportLibAnnotation"
+
+    compile project(path: ':android-utils')
+    compile project(path: ':library')
+    compile project(path: ':menu-lib')
+    compile project(path: ':ProgressBar-lib')
+    compile project(path: ':dialog-lib:core')
+    compile project(path: ':IjkPlayer-lib')
+    compile project(path: ':dialog-lib:commons')
+
+
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+   /* androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })*/
+
+    compile 'com.github.JakeWharton:ViewPagerIndicator:2.4.1@aar'
+
+    //Dagger
+    compile "com.google.dagger:dagger:$rootProject.ext.dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.ext.dagger"
+    provided 'javax.annotation:jsr250-api:1.0'
+
+    //Retrofit
+    compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofit"
+
+    //OkHttp
+    compile "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttpVer"
+    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVer"
+    compile "com.squareup.okio:okio:$rootProject.ext.okio"
+
+    //Gson
+    compile "com.google.code.gson:gson:$rootProject.ext.gson"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofit"
+    compile "com.github.bumptech.glide:glide:$rootProject.ext.glide"
+
+    compile "org.greenrobot:greendao-generator:$rootProject.ext.greendao"
+    compile "org.greenrobot:greendao:$rootProject.ext.greendao"
+
+    compile "com.jakewharton:butterknife:$rootProject.ext.butterknife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife"
+
+    compile "com.squareup.sqlbrite:sqlbrite:$rootProject.ext.sqlbrite"
+
+
+    annotationProcessor "com.google.auto.value:auto-value:$rootProject.ext.autoValue"
+    provided "com.google.auto.value:auto-value:$rootProject.ext.autoValue"
+
+    //Auto Value GSON
+    annotationProcessor "com.ryanharter.auto.value:auto-value-gson:$rootProject.ext.autoValueGson"
+    provided "com.ryanharter.auto.value:auto-value-gson:$rootProject.ext.autoValueGson"
+
+
+    //Auto Value Parcelable
+    annotationProcessor "com.ryanharter.auto.value:auto-value-parcel:$rootProject.ext.autoValueParcel"
+    provided "com.ryanharter.auto.value:auto-value-parcel:$rootProject.ext.autoValueParcel"
+
+
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.0'
+    compile "com.github.akarnokd:rxjava2-interop:0.9.5"
+    compile 'io.reactivex.rxjava2:rxjava:2.0.2'
+
+    compile "com.jakewharton.rxbinding2:rxbinding:$rootProject.ext.rxbinding2"
+    compile "com.jakewharton.rxbinding2:rxbinding-support-v4:$rootProject.ext.rxbinding2"
+    compile "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$rootProject.ext.rxbinding2"
+    compile "com.jakewharton.rxbinding2:rxbinding-design:$rootProject.ext.rxbinding2"
+
+
+
+    debugCompile "com.squareup.leakcanary:leakcanary-android:$rootProject.ext.leakcanary"
+    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.ext.leakcanary"
+    testCompile "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.ext.leakcanary"
+
+    compile 'com.alipay.euler:andfix:0.5.0@aar'
+
+    compile 'com.android.support:multidex:1.0.1'
+
+
+    compile 'com.mindorks:placeholderview:0.6.2'
+
+    compile 'com.beardedhen:androidbootstrap:2.3.1'
+
+
+    //compile 'com.annimon:stream:1.1.7'
+
+
+}
+
+

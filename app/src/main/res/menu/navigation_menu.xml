@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group>
+        <item android:title="@string/ServerStatus">
+            <menu>
+                <item
+                    android:id="@+id/drawerApserver"
+                    android:icon="@mipmap/ic_wifi_black_48dp"
+                    android:title="@string/Apserver" />
+                <item
+                    android:id="@+id/drawerDbserver"
+                    android:icon="@mipmap/ic_wifi_black_48dp"
+                    android:title="@string/Dbserver" />
+            </menu>
+        </item>
+        <item android:title="@string/language_setting">
+            <menu>
+                <item
+                    android:id="@+id/drawerLanguage"
+                    android:icon="@mipmap/ic_language_black_48dp"
+                    android:title="@string/Language" />
+            </menu>
+        </item>
+
+        <item android:title="@string/Exit">
+            <menu>
+                <item
+                    android:id="@+id/drawerLogout"
+                    android:icon="@mipmap/ic_power_settings_new_black_48dp"
+                    android:title="@string/Exit" />
+            </menu>
+        </item>
+
+        <item android:title="@string/open">
+            <menu>
+                <item
+                    android:id="@+id/drawerOpen"
+                    android:icon="@mipmap/ic_power_settings_new_black_48dp"
+                    android:title="@string/open" />
+            </menu>
+        </item>
+    </group>
+
+</menu>

@@ -1,0 +1,8 @@
+ext.versions = [
+        minSdk: rootProject.ext.global_minSdkVersion,
+        compileSdk: rootProject.ext.global_compileSdkVersion,
+        buildTools: rootProject.ext.global_buildToolsVersion//,
+     //   publishVersion: '0.9.4.4',
+      //  publishVersionCode: 174,
+
+]

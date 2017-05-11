@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dagger</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string-array name="lang_select_code">
+        <item>en</item>
+        <item>zh</item>
+    </string-array>
+    <string-array name="lang_select">
+        <item>English</item>
+        <item>Chinese-zh</item>
+    </string-array>
+    <string name="Login">Login</string>
+    <string name="Clear">Clear</string>
+    <string name="MSLNo">MSLNo</string>
+</resources>

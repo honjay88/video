@@ -1,0 +1,104 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="vpiTabPageIndicatorStyle">@style/CustomTabPageIndicator</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- change the textColor -->
+
+    </style>
+
+    <style name="CustomTheme2" parent="android:Theme">
+        <item name="android:windowTitleSize">35dip</item>
+        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+    </style>
+
+    <style name="CustomWindowTitleBackground">
+
+    </style>
+
+    <style name="AppTheme.Toolbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--ActionBar顏色-->
+        <item name="colorPrimary">@color/colorAccent</item>
+        <!--狀態欄顏色-->
+        <item name="colorPrimaryDark">@color/accent_material_light</item>
+        <!--設置window中控件的,比如：checkbox、switch等checked或selected時的顏色-->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--設置window布局背景色-->
+        <item name="android:windowBackground">@color/dim_foreground_material_dark</item>
+
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowToggle</item>
+        <!-- The style for the widgets on the ActionBar. -->
+        <item name="android:textColorSecondary">@android:color/white</item>
+    </style>
+    <style name="AppTheme.DrawerArrowToggle" parent="Base.Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+
+    <style name="AppTheme.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <!-- Set proper title size -->
+        <item name="android:textSize">@dimen/abc_text_size_title_material_toolbar</item>
+        <!-- Set title color -->
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+    <style name="ThemeOverlay.MyApp.NavigationView" parent="ThemeOverlay.AppCompat.Light">
+        <!-- This is the menu item text color. -->
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <!-- This is the menu header text color. -->
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+        <!-- This is the selected color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+    </style>
+
+    <style name="TvTextViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="CustomTabPageIndicator" parent="Widget.TabPageIndicator">
+        <item name="android:textAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="android:background">@drawable/custom_tab_indicator</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:divider">@mipmap/custom_tab_indicator_divider</item>
+        <item name="android:dividerPadding">10dp</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:fadingEdge">horizontal</item>
+        <item name="android:fadingEdgeLength">8dp</item>
+    </style>
+
+    <style name="SeekBarAppTheme">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:focusable">true</item>
+        <item name="android:progressDrawable">
+            @drawable/simple_player_progress_horizontal_holo_dark
+        </item>
+        <item name="android:indeterminateDrawable">
+            @drawable/simple_player_progress_horizontal_holo_dark
+        </item>
+        <item name="android:thumb">@drawable/simple_player_control_selector_holo_dark</item>
+        <item name="android:minHeight">13dip</item>
+        <item name="android:maxHeight">13dip</item>
+        <item name="android:paddingLeft">15.0dip</item>
+        <item name="android:paddingRight">15.0dip</item>
+
+    </style>
+</resources>

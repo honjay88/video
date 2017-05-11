@@ -1,0 +1,118 @@
+<resources>
+    <string name="app_name">Dagger</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">fuck</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <string name="page_1">Page 1</string>
+    <string name="page_2">Page 2</string>
+    <string name="page_3">Page 3</string>
+
+    <string name="fragment_a1">Fragment A1</string>
+    <string name="fragment_a2">Fragment A2</string>
+    <string name="fragment_a3">Fragment A3</string>
+    <string name="fragment_b1">Fragment B1</string>
+    <string name="fragment_b2">Fragment B2</string>
+    <string name="fragment_b3">Fragment B3</string>
+    <string name="fragment_c1">Fragment C1</string>
+    <string name="fragment_common">Fragment common</string>
+    <string name="next_fragment">Next Fragment</string>
+    <string name="backpage">back page</string>
+    <string name="action_logout">Logout</string>
+    <string name="Todo">Todo</string>
+    <string name="Login">Login</string>
+    <string name="Clear">Clear</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="language_setting">Change Language</string>
+    <string name="lang_dialog_title">langTitle</string>
+    <string name="lang_dialog_message">LangMessage</string>
+    <string-array name="lang_select_code">
+        <item>en</item>
+        <item>zh</item>
+    </string-array>
+    <string-array name="lang_select">
+        <item>English</item>
+        <item>Chinese-zh</item>
+    </string-array>
+    <string name="Apserver">Apserver</string>
+    <string name="Dbserver">Dbserver</string>
+    <string name="Language">Language</string>
+    <string name="ServerStatus">ServerStatus</string>
+    <string name="Exit">Exit</string>
+    <string name="OK">OK</string>
+    <string name="Cancel">Cancel</string>
+    <string name="MSLNo">MSLNo</string>
+
+
+    <string name="giraffe_player_url_empty">请指定播放视频的地址</string>
+    <string name="small_problem">出现了点小问题,稍后重试</string>
+    <string name="can_not_play">不能播放此视频</string>
+    <string name="not_support">播放器不支持此设备</string>
+
+
+
+
+
+
+    <!-- Optional button to Skip a PreferenceActivity [CHAR LIMIT=20] -->
+    <string name="skip_button_label">Skip</string>
+    <string name="input">Input</string>
+    <string name="input_custominvalidation">Input (Custom Invalidation)</string>
+    <string name="input_hint">John Appleseed</string>
+    <string name="input_content">What\'s your name?</string>
+    <string name="simple_list">Simple Dialog (Guidelines Spec)</string>
+    <string name="set_backup">Set backup account</string>
+    <string name="add_account">Add account</string>
+    <string name="submit">Submit</string>
+    <string name="preference_dialog_message">This is an example of a dialog message.</string>
+    <string name="preference_dialog_title">Dialog Title</string>
+    <string name="material_dialog_pref_title">Dialog Preference</string>
+    <string name="material_dialog_pref_summary">This is an example of a basic dialog preference that automatically uses Material Dialogs to show the dialog.</string>
+    <string name="input_content_custominvalidation">Do not type hello, or else!</string>
+    <string name="clear_selection">Clear</string>
+    <string name="color_palette">Color Palette</string>
+    <string name="colors">Colors</string>
+    <string name="color_chooser_customColors">Color Chooser (Custom Palette)</string>
+    <string name="color_chooser_customColors_noSub">Color Chooser (Custom Palette, No Sub)</string>
+    <string name="action_buttons">Action Buttons</string>
+    <string name="custom_views">Custom Views</string>
+    <string name="color_chooser">Color Choosers</string>
+    <string name="progress">Progress</string>
+    <string name="preferences">Preferences</string>
+    <string name="misc">Miscellaneous</string>
+    <string name="basic_lists">Basic Lists</string>
+    <string name="choice_lists">Choice Lists</string>
+    <string name="advanced_lists">Advanced Lists</string>
+    <string name="list_longItems">Basic List (Long Items)</string>
+    <string name="multiChoice_disabledItems">Multi Choice (Disabled Items)</string>
+    <string name="singleChoice_longItems">Single Choice (Long Items)</string>
+    <string name="multiChoice_longItems">Multi Choice (Long Items)</string>
+    <string name="file_chooser">File Chooser</string>
+    <string name="basic_checkbox_prompt">Basic (CheckBox Prompt)</string>
+    <string name="dont_ask_again">Don\'t ask again</string>
+    <string name="deny">Deny</string>
+    <string name="allow">Allow</string>
+    <string name="permissionSample"><![CDATA[Allow <b>%1$s</b> to show you a sample of a checkbox prompt?]]></string>
+    <string name="date_picker">Date Picker</string>
+    <string name="list_checkPrompt">Basic List (CheckBox Prompt)</string>
+    <string name="input_checkPrompt">Input (CheckBox Prompt)</string>
+    <string name="example_prompt">Example check prompt</string>
+    <string name="list_longPress">Basic List (Long Press)</string>
+    <string name="add_item">Add Item</string>
+    <string name="multiChoiceLimitedMin">Multi Choice (Min Selections)</string>
+
+
+</resources>

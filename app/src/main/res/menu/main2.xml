@@ -1,0 +1,24 @@
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_add"
+        android:icon="@mipmap/ic_launcher"
+        android:orderInCategory="90"
+        app:showAsAction="ifRoom"
+        android:title="Close">
+    </item>
+    <item
+        android:id="@+id/menu_delete"
+        android:icon="@mipmap/ic_launcher"
+        android:orderInCategory="90"
+        app:showAsAction="ifRoom"
+        android:title="Delete"/>
+    <item
+        android:id="@+id/menu_assign"
+        android:icon="@mipmap/ic_launcher"
+        android:orderInCategory="90"
+        app:showAsAction="ifRoom"
+        android:title="Assign">
+    </item>
+</menu>

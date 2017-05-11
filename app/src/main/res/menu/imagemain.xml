@@ -1,0 +1,30 @@
+<!--
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.honjaychen.dagger.ui.home.MainActivity2">
+
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+</menu>-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <item
+                android:id="@+id/loadimage"
+                android:icon="@mipmap/ic_launcher"
+                app:showAsAction="always|withText"
+                android:title="載入照片"/>
+            <item
+                android:id="@+id/usecamera"
+                android:icon="@mipmap/ic_launcher"
+                app:showAsAction="always|withText"
+                android:title="使用相機"/>
+            <item
+                android:id="@+id/cancel"
+                android:icon="@mipmap/ic_launcher"
+                app:showAsAction="always|withText"
+                android:title="取消"/>
+
+</menu>

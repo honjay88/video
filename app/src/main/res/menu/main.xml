@@ -1,0 +1,45 @@
+<!--
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.honjaychen.dagger.ui.home.MainActivity2">
+
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+</menu>-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_more"
+        android:icon="@mipmap/ic_list_black_48dp"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:title="更多">
+        <menu>
+            <item
+                android:id="@+id/menu_theme"
+                android:icon="@mipmap/ic_launcher"
+                app:showAsAction="always|withText"
+                android:title="更换主题"/>
+            <item
+                android:id="@+id/menu_system"
+                android:icon="@mipmap/ic_launcher"
+                app:showAsAction="always|withText"
+                android:title="系统设置"/>
+            <item
+                android:id="@+id/menu_uninstall"
+                android:icon="@mipmap/ic_launcher"
+                app:showAsAction="always|withText"
+                android:title="卸载应用"/>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menu_add"
+        android:icon="@mipmap/ic_launcher"
+        android:orderInCategory="90"
+        app:showAsAction="ifRoom"
+        android:title="Add">
+    </item>
+
+</menu>

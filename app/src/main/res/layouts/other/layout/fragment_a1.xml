@@ -1,0 +1,142 @@
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Fragment.A1Fragment"
+    android:background="@android:color/white"
+    android:id="@+id/A1fragment_mainLayout">
+    <!-- Header aligned to top -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <!-- Content below header and above footer -->
+        <RelativeLayout
+            android:id="@+id/first3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/background_light"
+            android:gravity="center">
+
+            <TableLayout
+                android:id="@+id/Inputtable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:stretchColumns="*"
+                android:visibility="visible">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="@string/MSLNo" />
+
+                    <EditText
+                        android:id="@+id/editMslno"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_span="3"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="MSLNo"
+                        android:inputType="text" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="WorkOrder" />
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="WorkOrder" />
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="Machine" />
+
+                    <TextView
+                        android:padding="3dip"
+                        android:text="Machineffff" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:padding="3dp"
+                        android:text="MSLNo" />
+
+                    <EditText
+                        android:id="@+id/editInput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_span="3"
+                        android:layout_weight="4"
+                        android:ems="10"
+                        android:hint="InputData"
+                        android:inputType="text" />
+                </TableRow>
+            </TableLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/msg_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="?attr/colorAccent"
+            android:gravity="left"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Message"
+                android:textColor="#000"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/first2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/first3"
+            android:background="@android:color/holo_blue_dark"
+            android:gravity="left">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Material Data"
+                android:textColor="#000"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/first2"
+            android:layout_above="@id/msg_footer">
+
+            <ListView
+                android:id="@+id/listView1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_orange_light" />
+        </RelativeLayout>
+        <!-- Footer aligned to bottom -->
+    </RelativeLayout>
+
+</FrameLayout>

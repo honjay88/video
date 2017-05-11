@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+
+//apply plugin: 'com.github.dcendents.android-maven'
+//group='com.github.open-android'
+
+android {
+    compileSdkVersion rootProject.ext.global_compileSdkVersion
+    buildToolsVersion rootProject.ext.global_buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.global_minSdkVersion
+        targetSdkVersion rootProject.ext.global_targetSdkVersion
+        versionCode rootProject.ext.global_libVersionCode
+        versionName rootProject.ext.global_libVersionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    //compile fileTree(include: ['*.jar'], dir: 'libs')
+    provided "com.android.support:support-v4:$rootProject.ext.supportLibVersionv4"
+    provided "com.github.bumptech.glide:glide:$rootProject.ext.glide"
+}

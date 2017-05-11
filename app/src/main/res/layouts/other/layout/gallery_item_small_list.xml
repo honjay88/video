@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <com.beardedhen.androidbootstrap.AwesomeTextView
+                android:id="@+id/titleID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="3dip"
+                android:text="title"
+                app:bootstrapBrand="primary"
+                app:bootstrapHeading="h6" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:id="@+id/text_view"/>
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="favarite"
+                app:bootstrapBrand="success"
+                app:bootstrapSize="xs"
+                app:buttonMode="regular"
+                app:roundedCorners="true"
+                app:showOutline="true" />
+        </TableRow>
+            <com.mindorks.placeholderview.PlaceHolderView
+                android:id="@+id/placeholderview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical" />
+    </TableLayout>
+</LinearLayout>

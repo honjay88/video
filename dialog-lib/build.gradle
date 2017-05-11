@@ -1,0 +1,18 @@
+apply from: './dependencies.gradle'
+
+buildscript {
+    apply from: './dependencies.gradle'
+
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        //classpath 'com.android.tools.build:gradle:2.3.0'//com.android.tools.build:gradle:' + rootProject.ext.gradlePlugin
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}

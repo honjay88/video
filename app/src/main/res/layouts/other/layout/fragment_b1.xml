@@ -1,0 +1,124 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Fragment.B1Fragment"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:id="@+id/fragment_mainLayout">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- Content below header and above footer -->
+
+        <RelativeLayout
+            android:id="@+id/first2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/holo_blue_dark">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:gravity="left"
+                android:text="header"
+                android:textColor="#000"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@+id/first2">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:scaleType="fitXY"
+                android:src="@android:drawable/radiobutton_on_background" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/status2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:layout_above="@+id/msg_footer">
+
+            <TextView
+                android:id="@+id/tv_service_status"
+                style="@style/TvTextViewStyle"
+                android:layout_alignParentTop="false"
+                android:text="服务状态：未运行" />
+
+            <TextView
+                android:id="@+id/tv_thread_status"
+                style="@style/TvTextViewStyle"
+                android:layout_below="@+id/tv_service_status"
+                android:text="线程状态：未运行" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_below="@+id/tv_thread_status"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@+id/tv_progress"
+                android:progressDrawable="@drawable/progressbar_selector" />
+
+            <TextView
+                android:id="@+id/tv_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="0%"
+                android:textColor="@color/colorPrimary" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/msg_footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="?attr/colorAccent"
+            android:gravity="left"
+            android:visibility="visible">
+
+            <ImageButton
+                android:id="@+id/imageSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/star_on" />
+
+            <ImageButton
+                android:id="@+id/imageUpload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/imageSelect"
+                app:srcCompat="@mipmap/ic_wifi_black_48dp" />
+        </RelativeLayout>
+
+
+        <!-- Footer aligned to bottom -->
+    </RelativeLayout>
+
+</FrameLayout>
