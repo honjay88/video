@@ -3,21 +3,23 @@
 Android Sample
 ===================================
 
-This sample demonstrates how to use video/ijkplayer and some other function tips.
+This sample demonstrates how to use video/ijkplayer and some other function tips.</br>
+See below lists.
 
 Introduction
 ------------
 
-function:
+function:</br>
 1.Dagger</br>
-2.retrofit2
-3.butterknife
-4.rxjava2
-5.ViewPagerIndicator
-6.glide
-7.cardview
-8.gms
-9.ijkplayer
+2.retrofit2</br>
+3.butterknife</br>
+4.rxjava2</br>
+5.ViewPagerIndicator</br>
+6.glide</br>
+7.cardview</br>
+8.gms</br>
+9.ijkplayer</br>
+10.sqlbrite</br>
 etc.....
 
  
@@ -26,7 +28,7 @@ Pre-requisites
 --------------
 
 - Android SDK 25
-- Android Build Tools v25.0.3
+- Android Build Tools v25.3.1
 - Android Support Repository
 
 Screenshots
