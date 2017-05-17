@@ -11,15 +11,16 @@ Introduction
 
 function:</br>
 1.Dagger</br>
-2.retrofit2</br>
-3.butterknife</br>
-4.rxjava2</br>
+2.Retrofit2</br>
+3.Butterknife</br>
+4.Rxjava2</br>
 5.ViewPagerIndicator</br>
-6.glide</br>
-7.cardview</br>
-8.gms</br>
+6.Glide</br>
+7.Cardview</br>
+8.Gms</br>
 9.ijkplayer</br>
 10.sqlbrite</br>
+
 etc.....
 
  
@@ -30,6 +31,7 @@ Pre-requisites
 - Android SDK 25
 - Android Build Tools v25.3.1
 - Android Support Repository
+- Backend service depended by you choose language,such like C#,JAVA...........
 
 Screenshots
 -------------
